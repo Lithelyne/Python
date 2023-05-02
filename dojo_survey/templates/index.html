@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <style>
+        .container {
+            text-align: center;
+            margin: auto;
+            width: 1000px;
+            height: 1500px;
+            background-color: rgb(44, 43, 43);
+        }
+
+        h1 {
+            color: rgb(255, 247, 0);
+            font-size: 36px;
+            font-weight: 700px;
+            text-align: left;
+            margin-left: 120px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 24px;
+            text-align: left;
+            margin-left: 120px;
+        }
+
+        input[type="submit"] {
+            background-color: yellow;
+            border-radius: 15%;
+            height: 50px;
+            width: 125px;
+        }
+        select {
+            width: 750px;
+        }
+        input{
+            width: 750px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dojo Survey</h1>
+        <form action="/handle_form" method="post">
+            <div>
+                <h2>Name:</h2>
+            </div>
+
+            <div>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <div>
+                    <h2>Dojo Location:</h2>
+                </div>
+        <!-- Jinja tags that mark the start and end of our loop -->
+                <Select name="location" id="">
+                    {% for location in location %}
+                    <option value="{{location}}">{{location.capitalize()}}</option>
+                    {% endfor %}
+                </Select>
+
+            </div>
+            <div>
+                <div>
+                    <h2>Favorite Language:</h2>
+                </div>
+        <!-- Jinja tags that mark the start and end of our loop -->
+                <Select name="language" id="">
+                    {% for language in languages %}
+                    <option value="{{language}}">{{language.capitalize()}}</option>
+                    {% endfor %}
+                </Select>
+            </div>
+            <div>
+                <div>
+                    <h2>Comments:</h2>
+                </div>
+                <textarea name="comment" cols="100" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

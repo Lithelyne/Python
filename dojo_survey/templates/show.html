@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <style>
+        .container {
+            text-align: center;
+            margin: auto;
+            width: 1000px;
+            height: 800px;
+            background-color: rgb(44, 43, 43);
+        }
+        h1 {
+            color: rgb(67, 67, 233);
+            font-size: 36px;
+            font-weight: 700px;
+        }
+        h2 {
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Name: {{session.name.capitalize()}}</h1>
+        <h2>Dojo Location: {{session.location.capitalize()}}</h2>
+        <h2>Favorite Language: {{session.language.capitalize()}}</h2>
+        <h2>Comments: {{session.comment.capitalize()}}</h2>
+    </div>
+</body>
+</html>
